@@ -14,11 +14,22 @@ def ventaMenores(edad):
     colorJuguete = ''
     jugueteCamina = ''
     mensajePedido = [str(edad) + ' años']
+    listaColores = ['rojo', 'azul', 'verde']
+    estaEnLaLista = False
+
+    
+    
+
     while esElectronico != 'Y' and  esElectronico != 'N':  
         esElectronico = input('¿Compra juguete electrónico? Y/N :')
     
-    while colorJuguete != 'rojo' and colorJuguete != 'verde' and colorJuguete != 'azul':  
+    while not estaEnLaLista:
         colorJuguete = input('¿De qué color? (rojo/verde/azul) :')
+        for color in listaColores: 
+            if colorJuguete == color:
+                estaEnLaLista = True
+            else:
+                estaEnLaLista = False    
 
     while jugueteCamina != 'Y' and jugueteCamina != 'N':  
         jugueteCamina = input('¿El juguete camina? Y/N :')
